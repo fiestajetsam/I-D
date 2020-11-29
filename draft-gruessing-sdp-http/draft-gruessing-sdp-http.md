@@ -42,7 +42,7 @@ delivered via HTTP.
 *RFC Editor: please remove this section before publication*
 
 Source code and issues for this draft can be found at
-<https://github.com/fiestajetsam/draft-gruessing-sdp-http>.
+<https://github.com/fiestajetsam/I-D/tree/main/draft-gruessing-sdp-http>.
 
 --- middle
 
