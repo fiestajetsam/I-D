@@ -135,7 +135,9 @@ of time.
 
 The support for compatibility with other protocols SHOULD NOT prevent addressing
 issues that have previous caused issues in deployments or cause ossification of
-the protocol.
+the protocol. Protocol ossification MUST be addressed to prevent existing NTPv4
+deployments which incorrectly respond to clients posing as NTPv5 from causing
+issues.
 
 # IANA Considerations
 
@@ -158,7 +160,7 @@ Detection and reporting of server malfeasence SHOULD remain out of scope of this
 specification as {{!I-D.ietf-ntp-roughtime}} already provides this capability as
 a core functionality of the protocol.
 
---back
+---back
 
 # Acknowledgements
 
