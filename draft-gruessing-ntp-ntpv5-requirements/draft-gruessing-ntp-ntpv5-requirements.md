@@ -155,6 +155,8 @@ becomes known and vulnerabilities are discovered.
 The specification MAY consider leaving room for middleboxes which may
 deliberately modify packets in flight for legitimate purposes. Thought must be
 given around how this will be incorporated into any applicable trust model.
+Downgrading attacks that could lead to an adversary disabling or removing
+encryption or authentication MUST NOT be possible in the design of the protocol.
 
 Detection and reporting of server malfeasence SHOULD remain out of scope of this
 specification as {{!I-D.ietf-ntp-roughtime}} already provides this capability as
