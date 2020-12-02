@@ -41,6 +41,13 @@ of the NTP protocol {{!RFC5905}} presently referred to as NTP version 5
 ("NTPv5"). This document is non-exhaustive and does not in its current version
 represent working group consensus.
 
+--- note_Note_to_Readers
+
+*RFC Editor: please remove this section before publication*
+
+Source code and issues for this draft can be found at
+<https://github.com/fiestajetsam/I-D/tree/main/draft-gruessing-ntp-ntpv5-requirements>.
+
 --- middle
 
 # Introduction
