@@ -144,7 +144,8 @@ The support for compatibility with other protocols SHOULD NOT prevent addressing
 issues that have previous caused issues in deployments or cause ossification of
 the protocol. Protocol ossification MUST be addressed to prevent existing NTPv4
 deployments which incorrectly respond to clients posing as NTPv5 from causing
-issues.
+issues. Forward prevention of ossification (for a potential NTPv6 protocol in
+the future) SHOULD also be taken into consideration.
 
 # IANA Considerations
 
