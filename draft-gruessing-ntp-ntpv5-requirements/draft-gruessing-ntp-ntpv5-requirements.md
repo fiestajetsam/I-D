@@ -147,6 +147,12 @@ deployments which incorrectly respond to clients posing as NTPv5 from causing
 issues. Forward prevention of ossification (for a potential NTPv6 protocol in
 the future) SHOULD also be taken into consideration.
 
+## Extensibility
+
+To provide the protocol MUST have the capability to be extended. The
+specification should specify that implementations MUST ignore unknown
+extensions.
+
 # IANA Considerations
 
 Considerations should be made about the future of the existing IANA registry
