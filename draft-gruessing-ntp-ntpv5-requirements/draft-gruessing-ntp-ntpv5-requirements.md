@@ -115,28 +115,36 @@ normative behaviours.
 
 The working group should consider creating a separate informational document to
 describe an algorithm to assist with implementation, and to consider adopting
-future documents which describe new algorithms as they are developed.
+future documents which describe new algorithms as they are developed. Specifying
+client algorithms separately from the protocol allows will allow NTPv5 to meet
+the needs of applications with a variety of network properties and performance
+requirements. It also allows for innovation in implementations without
+sacrificing basic interoperability.
 
 ## Timescales
 
 Support SHOULD be available for other timescales in addition to UTC - this
 should include, but not limited to the use of TAI or Modified Julian Date as
-defined in {{I-D.ietf-ntp-roughtime}}. Consideration should be made to include
-listing the supported timescales either as part of specific IANA parameter
-registry, or as part of the extension registry.
+defined in {{I-D.ietf-ntp-roughtime}}, however UTC SHALL be the default
+timescale and MUST be supported by all implementations. Consideration should be
+made to include listing the supported timescales either as part of specific IANA
+parameter registry, or as part of the extension registry.
 
 ## Leap seconds
 
 The specification or the protocol SHOULD be explicit about when a leap
 second is being applied, and the protocol should allow for transmiting an
-upcoming leap second ahead of the day it is to be applicable.
+upcoming leap second ahead of the day it is to be applicable. Nevertheless,
+due to network delays and the polling interval, applications with NTP clients
+will need to manage the leap second event at their local clock.
 
 ### Leap second smearing
 
 Server responses SHOULD include not only an indicator as to wether the server
 supports smearing, but also if the current time being transmitted is smeared.
 The protocol may also transmit the start/end or duration of the smearing ahead
-of time.
+of time. It MUST be possible for clients to determine the unsmeared time of the
+timescale.
 
 ## Backwards compatibility to NTS and NTPv4
 
@@ -147,10 +155,17 @@ deployments which incorrectly respond to clients posing as NTPv5 from causing
 issues. Forward prevention of ossification (for a potential NTPv6 protocol in
 the future) SHOULD also be taken into consideration.
 
+The model for backward compatibility is servers that support mutliple versions
+NTP and send a response in the same version as the request. This does not
+preclude high stratum servers from acting as a client in one version of NTP and
+a server in another.
+
 ## Extensibility
 
 To provide the protocol MUST have the capability to be extended. The
 specification should specify that implementations MUST ignore unknown
+extensions. Unknown extensions received by a server from a lower stratum server
+SHALL not be added to response messages sent by the server receiving these
 extensions.
 
 # IANA Considerations
@@ -179,8 +194,8 @@ a core functionality of the protocol.
 ---back
 
 # Acknowledgements
-
-The author would like to acknowledge Daniel Franke, Watson Ladd, Miroslav
-Lichvar for their existing documents and ideas. The author would also like to
-thank Angelo Moriondo, Franz Karl Achard, and Malcom McLean for providing 
-the author with motivation.
+The author would like to thank Doug Arnold for contributions to this document,
+and would like to acknowledge Daniel Franke, Watson Ladd, Miroslav Lichvar for
+their existing documents and ideas. The author would also like to thank Angelo
+Moriondo, Franz Karl Achard, and Malcom McLean for providing the author with
+motivation.
