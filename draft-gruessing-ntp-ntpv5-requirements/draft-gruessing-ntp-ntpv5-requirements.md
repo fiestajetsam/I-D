@@ -89,11 +89,6 @@ delay, and even filtering may occur.
 Timestamp resolution SHOULD either match or exceed NTPv4, and be extensible to
 represent any specified timescale.
 
-The protocol SHOULD NOT transmit time zone information and should focus on
-providing clock synchronisation as TZDIST {{RFC7808}} already provides this
-ability.
-
-## IP affinity
 
 Servers SHOULD have a new identifier that peers use as reference, this SHOULD
 NOT be a FQDN, an IP address, or identifier tied to a certificate. Servers
@@ -101,8 +96,8 @@ SHOULD be able to migrate and change their identifiers as stratum topologies or
 network configuration changes occur.
 
 Clients SHOULD re-establish connections with servers at an interval to prevent
-attempting to maintain connectivity to dead host and give network operators the
-ability to move traffic away from IP addresses in a timely manner. This
+attempting to maintain connectivity to a dead host and give network operators
+the ability to move traffic away from IP addresses in a timely manner. This
 functionality should also compliment having a "Kiss of Death" or similar message
 from servers.
 
@@ -157,16 +152,15 @@ the future) SHOULD also be taken into consideration.
 
 The model for backward compatibility is servers that support mutliple versions
 NTP and send a response in the same version as the request. This does not
-preclude high stratum servers from acting as a client in one version of NTP and
+preclude servers from acting as a client in one version of NTP and
 a server in another.
 
 ## Extensibility
 
-To provide the protocol MUST have the capability to be extended. The
-specification should specify that implementations MUST ignore unknown
-extensions. Unknown extensions received by a server from a lower stratum server
-SHALL not be added to response messages sent by the server receiving these
-extensions.
+The protocol MUST have the capability to be extended. The specification should
+specify that implementations MUST ignore unknown extensions. Unknown extensions
+received by a server from a lower stratum server SHALL not be added to response
+messages sent by the server receiving these extensions.
 
 # IANA Considerations
 
@@ -194,8 +188,8 @@ a core functionality of the protocol.
 --- back
 
 # Acknowledgements
-The author would like to thank Doug Arnold for contributions to this document,
-and would like to acknowledge Daniel Franke, Watson Ladd, Miroslav Lichvar for
-their existing documents and ideas. The author would also like to thank Angelo
-Moriondo, Franz Karl Achard, and Malcom McLean for providing the author with
-motivation.
+The author would like to thank Doug Arnold and Hal Murray for contributions to
+this document, and would like to acknowledge Daniel Franke, Watson Ladd,
+Miroslav Lichvar for their existing documents and ideas. The author would also
+like to thank Angelo Moriondo, Franz Karl Achard, and Malcom McLean for
+providing the author with motivation.
