@@ -118,28 +118,23 @@ sacrificing basic interoperability.
 
 ## Timescales
 
-Support SHOULD be available for other timescales in addition to UTC - this
-should include, but not limited to the use of TAI or Modified Julian Date as
-defined in {{I-D.ietf-ntp-roughtime}}, however UTC SHALL be the default
-timescale and MUST be supported by all implementations. Consideration should be
-made to include listing the supported timescales either as part of specific IANA
-parameter registry, or as part of the extension registry.
+The protocol SHOULD adopt a linear, monotonic timescale as the basis for
+communicating time. The format should meet sufficient scale and precision, and
+have a rollover date sufficiently far enough into the future that its complete
+obsolescence is the most likely to occur first. The timescale in addition to any
+other time sensitive information be sufficient to calculate representations of
+both UTC and TAI. Through extensions the protocol SHOULD support additional
+timescale representations outside of the main specification.
 
 ## Leap seconds
 
-The specification or the protocol SHOULD be explicit about when a leap
-second is being applied, and the protocol should allow for transmiting an
-upcoming leap second ahead of the day it is to be applicable. Nevertheless,
-due to network delays and the polling interval, applications with NTP clients
-will need to manage the leap second event at their local clock.
+The specification of the protocol MUST include support for UTC leap second
+information being transmitted in order for clients to generate a UTC
+representation. The specification SHOULD also be capable of transmitting
+upcoming leap seconds greater than 1 calendar day in advance.
 
-### Leap second smearing
-
-Server responses SHOULD include not only an indicator as to wether the server
-supports smearing, but also if the current time being transmitted is smeared.
-The protocol may also transmit the start/end or duration of the smearing ahead
-of time. It MUST be possible for clients to determine the unsmeared time of the
-timescale.
+Leap second smearing SHOULD NOT be part of the specification, and implementors
+should be discouraged from adding their functionality into the protocol.
 
 ## Backwards compatibility to NTS and NTPv4
 
