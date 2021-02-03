@@ -152,10 +152,10 @@ a server in another.
 
 ## Extensibility
 
-The protocol MUST have the capability to be extended. The specification should
-specify that implementations MUST ignore unknown extensions. Unknown extensions
-received by a server from a lower stratum server SHALL not be added to response
-messages sent by the server receiving these extensions.
+The protocol MUST have the capability to be extended, and that implementations
+MUST ignore unknown extensions. Unknown extensions received by a server from a
+lower stratum server SHALL not be added to response messages sent by the server
+receiving these extensions.
 
 # IANA Considerations
 
@@ -183,6 +183,7 @@ a core functionality of the protocol.
 --- back
 
 # Acknowledgements
+
 The author would like to thank Doug Arnold and Hal Murray for contributions to
 this document, and would like to acknowledge Daniel Franke, Watson Ladd,
 Miroslav Lichvar for their existing documents and ideas. The author would also
