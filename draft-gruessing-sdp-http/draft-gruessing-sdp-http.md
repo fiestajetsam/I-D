@@ -23,8 +23,8 @@ normative:
     RFC3864:
     RFC3986:
     RFC5322:
-    RFC4566:
     RFC8174:
+    RFC8866:
     I-D.ietf-httpbis-header-structure:
     "E.164":
         title: "The international public telecommunication numbering plan"
@@ -51,7 +51,7 @@ Source code and issues for this draft can be found at
 Services either negotiating or offering media over HTTP may want to express a
 greater amount of information beyond a MIME type of content and its preference.
 
-The Session Description Protocol {{RFC4566}} describes multimedia sessions for
+The Session Description Protocol {{RFC8866}} describes multimedia sessions for
 the purpose of session announcement and initiation.
 
 The Session-Description and Session-Media headers may be used for either a HTTP
@@ -81,7 +81,7 @@ v
 o
  : The originator of the session, whose value is an sh-list. The order of values
    present in the list MUST map to the order specified in Section 5.2 of
-   {{RFC4566}}.
+   {{RFC8866}}.
 
 s
  : The name of the SDP, whose values is a string and MUST NOT be empty.
@@ -104,7 +104,7 @@ p
 c
  : An OPTIONAL field containing connection data, whose value is an inner-list, and
    whose elements are each a string type matching the order of elements as
-   defined in Section 5.7 of {{RFC4566}}. This field MUST be set if no media
+   defined in Section 5.7 of {{RFC8866}}. This field MUST be set if no media
    entities in the description contain connection information.
 
 b
@@ -115,15 +115,15 @@ b
    second element is an integer type and MUST NOT be negative.
 
 k
- : An OPTIONAL field containing encryption key information, whose field is an
-   inner-list containing up to two elements. The first element
+ : The key-field field is obsolete and MUST NOT be used. Implementations MUST
+   discard the field if it is received.
 
 ### Time Description
 
 All values within time description fields that represent wall time MUST be
 values shown as integers which represent NTP timestamps with second resolution.
 To facilitate ease of parsing, fields that are used to represet a time duration
-or offset as described in Section 5.10 of {{RFC4566}} MUST NOT use the compact
+or offset as described in Section 5.10 of {{RFC8866}} MUST NOT use the compact
 version e.g "1h" instead of "3600".
 
 t
