@@ -73,7 +73,15 @@ following keys, receivers MUST ignore all other values. Dictionary keys MUST be
 ordered in the order presented in this document, but MAY be omitted where they
 are explicitly declared as OPTIONAL.
 
-### Session Description
+## Time Description
+
+All values within time description fields that represent wall time MUST be
+values shown as integers which represent NTP timestamps with second resolution.
+To facilitate ease of parsing, fields that are used to represet a time duration
+or offset as described in Section 5.10 of {{RFC8866}} MUST NOT use the compact
+version e.g "1h" instead of "3600".
+
+## Session Description
 
 v
  : The version, represented as an sh-integer that MUST be set 0.
@@ -118,14 +126,6 @@ k
  : The key-field field is obsolete and MUST NOT be used. Implementations MUST
    discard the field if it is received.
 
-### Time Description
-
-All values within time description fields that represent wall time MUST be
-values shown as integers which represent NTP timestamps with second resolution.
-To facilitate ease of parsing, fields that are used to represet a time duration
-or offset as described in Section 5.10 of {{RFC8866}} MUST NOT use the compact
-version e.g "1h" instead of "3600".
-
 t
  : An OPTIONAL field containing the start and end times of the session, whose
    value is an inner-list containing two elements - the first being the wall time
@@ -153,13 +153,13 @@ a
    attributes, the contents MUST be a single name/value pair with the name being
    the attribute name, and the value as a string.
 
-## The Session-Media Header
+# The Session-Media Header
 
 The Session-Media header describes each media element within the session, and at
 the top level is an sh-list.
 
 Each media representation may additionally contain a media title (i), connection
-information (c), bandwidth (b), or encryption key (k).
+information (c), or bandwidth (b).
 
 ## Implementation Considerations
 
@@ -171,7 +171,7 @@ dependant on implementation be sent in response to a HEAD request - in such
 cases the body MUST be omitted but the server MUST also send the
 "application/sdp" `Content-Type` HTTP header.
 
-### Character set usage
+## Character set usage
 
 TODO: Cover character sets
 
@@ -219,5 +219,7 @@ considerations raised in the structured header draft.
 --- back
 
 # Acknowledgements
+{: numbered="no"}
 
-TODO
+The author would like to thank Colin Perkins for very early feedback on this
+document.
