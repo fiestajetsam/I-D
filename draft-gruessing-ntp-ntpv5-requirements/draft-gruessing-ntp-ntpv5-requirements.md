@@ -121,10 +121,11 @@ sacrificing basic interoperability.
 The protocol SHOULD adopt a linear, monotonic timescale as the basis for
 communicating time. The format should meet sufficient scale and precision, and
 have a rollover date sufficiently far enough into the future that its complete
-obsolescence is the most likely to occur first. The timescale in addition to any
+obsolescence is most likely to occur first. The timescale in addition to any
 other time sensitive information be sufficient to calculate representations of
 both UTC and TAI. Through extensions the protocol SHOULD support additional
-timescale representations outside of the main specification.
+timescale representations outside of the main specification, and all
+transmissions of time data SHALL indicate the timescale in use.
 
 ## Leap seconds
 
