@@ -96,7 +96,7 @@ large increase in unauthorised traffic {{ntp-misuse}} and the design of NTPv5
 must ensure the risk of these can be minimised to the fullest extent.
 
 Servers SHOULD have a new identifier that peers use as reference, this SHOULD
-NOT be a FQDN, an IP address, or identifier tied to a certificate. Servers
+NOT be a FQDN, an IP address or identifier tied to a public certificate. Servers
 SHOULD be able to migrate and change their identifiers as stratum topologies or
 network configuration changes occur.
 
