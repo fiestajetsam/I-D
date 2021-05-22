@@ -113,8 +113,8 @@ the ability to move traffic away from hosts in a timely manner.
 ## Algorithms
 
 Algorithms describing functions such as clock filtering, selection and
-clustering SHOULD be omitted from the specification; the specification should
-instead only provide only what is necessary to describe protocol semantics and
+clustering SHOULD be omitted from the protocol specification; the specification
+should instead only provide what is necessary to describe protocol semantics and
 normative behaviours.
 
 The working group should consider creating a separate informational document to
