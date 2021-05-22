@@ -139,13 +139,16 @@ transmissions of time data SHALL indicate the timescale in use.
 
 ## Leap seconds
 
-The specification of the protocol MUST include support for UTC leap second
-information being transmitted in order for clients to generate a UTC
-representation. The specification SHOULD also be capable of transmitting
-upcoming leap seconds greater than 1 calendar day in advance.
+Support for UTC leap second information MUST be included in the protocol
+specification in order for clients to generate a UTC representation but must be
+transmitted as separate information to the timescale. The specification SHOULD
+also be capable of transmitting upcoming leap seconds greater than 1 calendar
+day in advance.
 
-Leap second smearing SHOULD NOT be part of the specification, and implementors
-should be discouraged from adding their functionality into the protocol.
+Leap second smearing SHOULD NOT be part of the wire specification, however this
+should not prevent implementors from applying leap second smearing between the
+client and any clock it is training but MUST NOT be applied to downstream
+clients.
 
 ## Backwards compatibility to NTS and NTPv4
 
