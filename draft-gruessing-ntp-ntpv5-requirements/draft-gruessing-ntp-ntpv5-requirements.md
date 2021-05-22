@@ -1,7 +1,7 @@
 ---
 title: "NTPv5 use cases and requirements"
 abbrev: "NTPv5 use cases and requirements"
-docname: draft-gruessing-ntp-ntpv5-requirements-01
+docname: draft-gruessing-ntp-ntpv5-requirements-02
 date: {DATE}
 
 author:
