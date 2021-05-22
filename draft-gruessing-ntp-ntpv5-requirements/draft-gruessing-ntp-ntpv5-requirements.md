@@ -152,12 +152,14 @@ clients.
 
 ## Backwards compatibility to NTS and NTPv4
 
-The support for compatibility with other protocols SHOULD NOT prevent addressing
+The support for compatibility with other protocols should not prevent addressing
 issues that have previous caused issues in deployments or cause ossification of
-the protocol. Protocol ossification MUST be addressed to prevent existing NTPv4
+the protocol.
+
+Protocol ossification MUST be addressed to prevent existing NTPv4
 deployments which incorrectly respond to clients posing as NTPv5 from causing
 issues. Forward prevention of ossification (for a potential NTPv6 protocol in
-the future) SHOULD also be taken into consideration.
+the future) should also be taken into consideration.
 
 The model for backward compatibility is servers that support mutliple versions
 NTP and send a response in the same version as the request. This does not
