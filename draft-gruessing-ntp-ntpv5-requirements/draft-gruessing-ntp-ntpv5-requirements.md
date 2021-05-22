@@ -26,6 +26,9 @@ normative:
     I-D.ietf-ntp-roughtime:
 
 informative:
+    ntp-misuse:
+        title: "NTP server misuse and abuse"
+        target: https://en.wikipedia.org/wiki/NTP_server_misuse_and_abuse
     ntppool:
         title: "pool.ntp.org: the internet cluster of ntp servers"
         target: "https://www.ntppool.org"
@@ -86,9 +89,11 @@ At a high level, NTPv5 should be a protocol that is capable of operating in both
 local networks and also over public internet connections where packet loss,
 delay, and even filtering may occur.
 
-Timestamp resolution SHOULD either match or exceed NTPv4, and be extensible to
-represent any specified timescale.
+## Resource mamangement
 
+Historically there have been many documented instances of NTP servers taking a
+large increase in unauthorised traffic {{ntp-misuse}} and the design of NTPv5
+must ensure the risk of these can be minimised to the fullest extent.
 
 Servers SHOULD have a new identifier that peers use as reference, this SHOULD
 NOT be a FQDN, an IP address, or identifier tied to a certificate. Servers
