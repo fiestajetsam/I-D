@@ -100,11 +100,15 @@ NOT be a FQDN, an IP address, or identifier tied to a certificate. Servers
 SHOULD be able to migrate and change their identifiers as stratum topologies or
 network configuration changes occur.
 
+The specification MUST have support for servers to notify clients that the
+service is unavailable, and clients MUST have clearly defined behaviours
+honouring this signalling. In addition to this servers SHOULD be able to
+communicate to clients that they should reduce their query interval rate when
+the server is under high bandwidth or has reduced capacity.
+
 Clients SHOULD re-establish connections with servers at an interval to prevent
 attempting to maintain connectivity to a dead host and give network operators
-the ability to move traffic away from IP addresses in a timely manner. This
-functionality should also compliment having a "Kiss of Death" or similar message
-from servers.
+the ability to move traffic away from hosts in a timely manner.
 
 ## Algorithms
 
